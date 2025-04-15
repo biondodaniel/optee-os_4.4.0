@@ -75,6 +75,9 @@ register_ddr(DRAM1_BASE, CFG_DDR_SIZE - 0x80000000);
 register_ddr(DRAM0_BASE, CFG_DDR_SIZE);
 #endif
 
+//event log
+register_phys_mem(MEM_AREA_IO_NSEC, 0x70000000, 0x00000400);
+
 void boot_primary_init_intc(void)
 {
 	gic_init(GIC_BASE + GICC_OFFSET, GIC_BASE + GICD_OFFSET);
