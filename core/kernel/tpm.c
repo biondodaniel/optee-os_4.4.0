@@ -157,4 +157,5 @@ void tpm_map_log_area(void *fdt)
 		EMSG("TPM: Failed to map TPM log memory");
 		return;
 	}
+	cache_op_inner(DCACHE_AREA_INVALIDATE, (void *)tpm_log_addr, rounded_size);
 }
