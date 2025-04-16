@@ -146,7 +146,8 @@ void tpm_map_log_area(void *fdt)
 	//tpm_log_addr = core_mmu_add_mapping(MEM_AREA_RAM_SEC, log_addr,
 	//				    rounded_size);
 	
-	tpm_log_addr = core_mmu_add_mapping(MEM_AREA_NSEC_SHM, log_addr, rounded_size);
+	//tpm_log_addr = core_mmu_add_mapping(MEM_AREA_NSEC_SHM, log_addr, rounded_size);
+	tpm_log_addr = (vaddr_t)phys_to_virt(log_addr, MEM_AREA_NSEC_SHM);
 
 	if (!tpm_log_addr) {
 		EMSG("TPM: Failed to map TPM log memory");
