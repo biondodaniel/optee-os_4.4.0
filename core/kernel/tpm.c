@@ -124,6 +124,10 @@ TEE_Result tpm_get_event_log(void *buf, size_t *size)
 	DMSG("\n\n -------------------- tpm_log_addr = %p \n\n", (void *)tpm_log_addr);
 	DMSG("\n\n ---------------------- size in tpm_get_event_log = %zu \n\n", tpm_log_size);
 	memcpy(buf, tpm_log_addr, tpm_log_size);
+	
+	for (size_t i = 0; i < 32; i++) {
+    		DMSG("buf[%02zu] = 0x%02x", i, ((uint8_t *)buf)[i]);
+	}
 
 	return TEE_SUCCESS;
 }
