@@ -11,7 +11,7 @@
 #include <string.h>
 
 #define CFG_TPM_MAX_LOG_SIZE 1024
-#define CFG_TPM_LOG_BASE_ADDR 0x70000000
+#define CFG_TPM_LOG_BASE_ADDR 0x79640000
 static void *tpm_log_addr;
 static size_t tpm_log_size;
 
